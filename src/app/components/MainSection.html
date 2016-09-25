@@ -8,7 +8,7 @@
 		<restaurant-quickview 
 			ng-repeat="restaurant in $ctrl.restaurants.filter($ctrl.selectedFilters)"
 			restaurant="restaurant"
-			on-click="$ctrl.openPage(restaurant)"
+			on-click="$ctrl.handleOpenRestaurantPage(restaurant)"
 		></restaurant-quickview>
 	</ul>
 </section>

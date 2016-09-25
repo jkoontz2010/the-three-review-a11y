@@ -3,9 +3,9 @@
 <star-review rating="$ctrl.restaurant.avgStars"></star-review>
 <h3>{{$ctrl.restaurant.address}}</h3>
 <img src="{{$ctrl.restaurant.primaryImage}}" alt="{{$ctrl.restaurant.altText}}">
-<button ng-click="$ctrl.openReviewModal(restaurant)">Write a Review!</button> 
+<button ng-click="$ctrl.handleReviewWrite()">Write a Review!</button> 
 <ul class="restaurant-reviews">
 	<restaurant-review 
-		ng-repeat="review in $ctrl.restaurant.restaurantReviews"
+		ng-repeat="review in $ctrl.reviews"
 	></restaurant-review>
 </ul>
