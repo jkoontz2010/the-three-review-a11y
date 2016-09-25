@@ -1,0 +1,11 @@
+<h2>{{$ctrl.restaurant.restaurantName}}</h2>
+<h3>{{$ctrl.restaurant.operatingHours}}</h3>
+<star-review rating="$ctrl.restaurant.avgStars"></star-review>
+<h3>{{$ctrl.restaurant.address}}</h3>
+<img src="{{$ctrl.restaurant.primaryImage}}" alt="{{$ctrl.restaurant.altText}}">
+<button ng-click="$ctrl.openReviewModal(restaurant)">Write a Review!</button> 
+<ul class="restaurant-reviews">
+	<restaurant-review 
+		ng-repeat="review in $ctrl.restaurant.restaurantReviews"
+	></restaurant-review>
+</ul>

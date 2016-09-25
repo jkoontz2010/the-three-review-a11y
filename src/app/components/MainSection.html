@@ -1,0 +1,14 @@
+<section>
+	<h1>Restaurant Reviews for Three Different Cities</h1>
+	<!-- plate of food underneath the above text -->
+	<restaurant-filter filters="$ctrl.selectedFilters">
+	</restaurant-filter>
+
+	<ul class="restaurant-list">
+		<restaurant-quickview 
+			ng-repeat="restaurant in $ctrl.restaurants.filter($ctrl.selectedFilters)"
+			restaurant="restaurant"
+			on-click="$ctrl.openPage(restaurant)"
+		></restaurant-quickview>
+	</ul>
+</section>
