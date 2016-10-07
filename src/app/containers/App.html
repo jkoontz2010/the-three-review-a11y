@@ -1,12 +1,9 @@
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">The Three Review</a>
-		</div>
-	</div>
-</nav>
+<navbar user="$ctrl.user" 
+		open-login-modal="$ctrl.openLoginModal()" 
+		open-signup-modal="$ctrl.openSignupModal()" 
+		logout-user="$ctrl.logoutUser()"></navbar>
 
-<main-section></main-section>
+<main-section user="$ctrl.user"></main-section>
 
 <footer>
 	<h3>No copyright, get rich for free!</h3>
