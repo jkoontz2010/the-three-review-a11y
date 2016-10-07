@@ -1,5 +1,7 @@
 <section>
 	<h1>Restaurant Reviews for Three Different Cities</h1>
+	<h2>And only three different cuisines!</h2>
+	<span ng-if="$ctrl.user !== null"><h3>Take your pick, {{ $ctrl.user.displayName }}!</h3></span>
 	<!-- plate of food underneath the above text -->
 	<restaurant-filter filters="$ctrl.selectedFilters">
 	</restaurant-filter>

@@ -13,6 +13,7 @@ angular
       restaurants: '<',
       openReviewModal: '&',
       openRestaurantPage: '&',
-      selectedFilters: '<'
+      selectedFilters: '<',
+      user: '<'
     }
   });
