@@ -1,11 +1,10 @@
-<h2>{{$ctrl.restaurant.restaurantName}}</h2>
+<h2>{{$ctrl.restaurant.name}}</h2>
 <h3>{{$ctrl.restaurant.operatingHours}}</h3>
-<star-review rating="$ctrl.restaurant.avgStars"></star-review>
-<h3>{{$ctrl.restaurant.address}}</h3>
-<img src="{{$ctrl.restaurant.primaryImage}}" alt="{{$ctrl.restaurant.altText}}">
-<button ng-click="$ctrl.handleReviewWrite()">Write a Review!</button> 
+<span uib-rating ng-model="$ctrl.restaurant.avgStars"></span>
+<h3>{{$ctrl.restaurant.location.join(" ")}}</h3>
+<img ng-src="{{$ctrl.restaurant.img_url}}" alt="{{$ctrl.restaurant.alt_text}}">
+<br>
+<button ng-click="">Write a Review!</button> 
 <ul class="restaurant-reviews">
-	<restaurant-review 
-		ng-repeat="review in $ctrl.reviews"
-	></restaurant-review>
+
 </ul>
