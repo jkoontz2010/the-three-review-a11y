@@ -37,6 +37,7 @@ for (const pathName in exports.paths) {
 }
 
 exports.bootstrapDir = './bower_components/bootstrap-sass/';
+
 /**
  *  Common implementation for an error handler of a Gulp plugin
  */

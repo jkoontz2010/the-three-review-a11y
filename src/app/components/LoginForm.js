@@ -16,10 +16,6 @@ class LoginForm {
       }
     });
   }
-
-  logoutUser() {
-    this.authHelper.$signOut();
-  }
 }
 
 // Close binding is from $uibModalInstance.

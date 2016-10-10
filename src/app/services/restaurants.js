@@ -1,16 +1,35 @@
 class RestaurantService {
 
-  constructor($firebaseArray, $firebaseObject) {
+  constructor($firebaseObject) {
     const root = firebase.database().ref();
-    this.restaurants = root.child("restaurants");
+    this.restaurantsRef = $firebaseObject(root.child("restaurants"));
   }
 
-  getRestaurantsByCity(city) {
-    return $firebaseArray(this.restaurants.child(city));
+  getRestaurantById(restaurantId) {
+    return this.restaurantsRef.$loaded().then(data => {
+      const restaurant = this.restaurantsRef[restaurantId];
+
+      if (restaurant === undefined) {
+        return new Error();
+      }
+      return restaurant;
+    }).catch(error => {
+      return new Error(error);
+    });
   }
 
-  getRestaurantById(city, restaurantId) {
-    return $firebaseObject(this.restaurants.child(city).child(restaurantId));
+  getRestaurants() {
+    return this.restaurantsRef.$loaded().then(data => {
+      let results = [];
+      angular.forEach(this.restaurantsRef, (value, key) => {
+        value.id = key;
+        results.push(value);
+      });
+
+      return results;
+    }).catch(error => {
+      return new Error(error);
+    });
   }
 }
 
