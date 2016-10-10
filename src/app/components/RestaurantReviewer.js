@@ -10,8 +10,8 @@ class RestaurantReviewer {
   }
 
   submitReview(review) {
-    this.reviewService.addReview(this.restaurant.id, review.text, this.user.displayName, review.stars).then(result => {
-      this.close();
+    this.reviewService.addReview(this.restaurant.id, review.text, this.user.displayName, review.stars).then(reviews => {
+      this.close({$value: reviews});
     }).catch(error => {
       console.log(error);
     });

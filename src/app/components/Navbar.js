@@ -14,7 +14,12 @@ class Navbar {
   openLoginModal() {
     const modalInstance = this.$uibModal.open({
       component: 'loginForm',
-      animation: true
+      animation: true,
+      resolve: {
+        message: () => {
+          return "Log in!";
+        }
+      }
     });
   }
 

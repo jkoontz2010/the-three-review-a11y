@@ -15,6 +15,7 @@ class ReviewService {
     };
 
     return restaurantReviews.$add(reviewObject).then(response => {
+      return restaurantReviews;
     }).catch(error => {
       return new Error(error);
     });
