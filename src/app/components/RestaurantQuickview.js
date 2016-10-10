@@ -1,12 +1,15 @@
 
 class RestaurantQuickview {
-
+  constructor($location) {
+    this.$location = $location;
+  }
   handleReviewWrite() {
     this.openReviewModal(this.restaurant);
   }
 
-  handleOpenRestaurantPage() {
-    this.openRestaurantPage(this.restaurant);
+  handleOpenRestaurantPage(restaurantId) {
+    console.log(restaurantId);
+    this.$location.path(`/restaurant/${restaurantId}`);
   }
 }
 

@@ -1,9 +1,7 @@
-<navbar user="$ctrl.user" 
-		open-login-modal="$ctrl.openLoginModal()" 
-		open-signup-modal="$ctrl.openSignupModal()" 
-		logout-user="$ctrl.logoutUser()"></navbar>
-
-<main-section user="$ctrl.user"></main-section>
+<main-section user="$ctrl.user"
+			  restaurants="$ctrl.restaurants"
+			  selected-filters="$ctrl.selectedFilters"
+			  select-filter="$ctrl.selectFilter(filter)"></main-section>
 
 <footer>
 	<h3>No copyright, get rich for free!</h3>

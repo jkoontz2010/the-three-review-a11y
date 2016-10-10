@@ -1,20 +1,38 @@
 <div class="row">
-	<div class="col-sm-8">
-		<div class="col-sm-4">
+	<div class="col-sm-offset-3 col-sm-8">
+		<div class="col-sm-3">
 			<!-- radio buttons for location -->
-			<input type="radio" ng-model="filter.city" value="Austin" checked>
-			<input type="radio" ng-model="filter.city" value="San Francisco">
-			<input type="radio" ng-model="filter.city" value="New York">
+			<input type="radio" id="atx" 
+					ng-model="$ctrl.filter.location" 
+					ng-change="$ctrl.handleChange({location: $ctrl.filter.location})" 
+					value="Austin" checked>
+					<label for="atx">Austin</label>	
+					<br>
+			<input type="radio" id="sf" 
+					ng-model="$ctrl.filter.location" 
+					ng-change="$ctrl.handleChange({location: $ctrl.filter.location})"
+					value="San Francisco">
+					<label for="sf">San Francisco</label>
+					<br>
+			<input type="radio" id="ny" 
+					ng-model="$ctrl.filter.location" 
+					ng-change="$ctrl.handleChange({location: $ctrl.filter.location})"
+					value="New York">
+					<label for="ny">New York</label>
+					<br>
 		</div>
 		<div class="col-sm-4">
 			<!-- radio buttons for best reveiwed and most reviewed -->
-			<input type="radio" ng-model="filter.bestmost">
-			<input type="radio" ng-model="filter.bestmost">
+			<input type="radio" id="bestReviewed" ng-model="$ctrl.filter.bestmost" value="best">
+			<label for="bestReviewed">Best Reviewed</label>
+			<br>
+			<input type="radio" id="mostReviews" ng-model="$ctrl.filter.bestmost" value="most">
+			<label for="mostReviews">Most Reviews</label>
 		</div>
 		<div class="col-sm-4">
 			<!-- $$$ filter and cuisine combobox -->
-			<cost-range mode="select" ng-model="filter.cost"></cost-range>
-			<cuisine-selector ng-model="filter.cuisine"></cuisine-selector>
+			<cost-range mode="select" ng-model="$ctrl.filter.cost"></cost-range>
+			<cuisine-selector ng-model="$ctrl.filter.cuisine"></cuisine-selector>
 		</div>
 	</div>
 </div>

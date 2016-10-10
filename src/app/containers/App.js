@@ -1,37 +1,43 @@
-class App {
-  constructor($uibModal, $firebaseAuth) {
+class MainPage {
+  constructor($uibModal, $firebaseAuth, restaurantService) {
     this.restaurants = [];
     this.$uibModal = $uibModal;
     this.authHelper = $firebaseAuth();
-    this.user = null;
+    this.restaurantService = restaurantService;
+    this.selectedFilters = selectedFilters;
 
+    this.user = null;
+    this.restaurants = [];
+
+    //
+    //  GET DATA
+    //
+    this.restaurantService.getRestaurants().then(restaurants => {
+      this.restaurants = restaurants;
+    });
+
+    //
+    //  SET AUTH LISTENER
+    //
     this.authHelper.$onAuthStateChanged(user => {
       this.user = user;
     });
   }
 
-  openLoginModal() {
-    const modalInstance = this.$uibModal.open({
-      component: 'loginForm',
-      animation: true
-    });
+  selectFilter(filter) {
+    console.log(filter);
+    if (filter !== undefined) {
+      Object.keys(filter).forEach(key => {
+        selectedFilters[key] = filter[key];
+      });
+    }
   }
 
-  openSignupModal() {
-    const modalInstance = this.$uibModal.open({
-      component: 'signupForm',
-      animation: true
-    });
-  }
-
-  logoutUser() {
-    this.authHelper.$signOut();
-  }
 }
 
 angular
   .module('app')
-  .component('app', {
+  .component('mainPage', {
     templateUrl: 'app/containers/App.html',
-    controller: App
+    controller: MainPage
   });

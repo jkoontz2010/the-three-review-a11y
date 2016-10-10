@@ -1,8 +1,9 @@
-<h2><a href="" ng-click="$ctrl.handleOpenRestaurantPage()">{{$ctrl.restaurant.name}}</a></h2>
-<star-review stars="$ctrl.restaurant.avgStars"></star-review>
-<h3>{{$ctrl.restaurant.operatingHours}}</h3>
-<img src="$ctrl.restaurant.primaryImage" alt="$ctrl.restaurant.altText">
-<h3>{{$ctrl.restaurant.address}}</h3>
+<h2><a href="" ng-click="$ctrl.handleOpenRestaurantPage($ctrl.restaurant.id)">{{$ctrl.restaurant.name}}</a></h2>
+<span uib-rating ng-model="$ctrl.restaurant.avgStars"></span>
+<!-- <star-review stars="$ctrl.restaurant.avgStars"></star-review> -->
+<p>{{$ctrl.restaurant.operatingHours}}</p>
+<img ng-src="{{$ctrl.restaurant.img_url}}" alt="{{$ctrl.restaurant.alt_text}}">
+<p>{{$ctrl.restaurant.location.join("\n")}}</p>
 <button ng-click="$ctrl.handleReviewWrite()">Write a review!</button>
 
 
