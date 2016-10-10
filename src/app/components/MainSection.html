@@ -7,13 +7,15 @@
 						select-filter="$ctrl.handleFilter(filter)">
 	</restaurant-filter>
 
-	<ul class="restaurant-list">
+	<div class="row">
+		<ul class="restaurant-list col-sm-10 col-sm-offset-1">
 
-		<restaurant-quickview 
-			ng-repeat="restaurant in $ctrl.restaurants.filter($ctrl.selectedFilters.filterRestaurants)"
-			restaurant="restaurant"
-			on-click="$ctrl.handleOpenRestaurantPage(restaurant)"
-			user="$ctrl.user"
-		></restaurant-quickview>
-	</ul>
+			<restaurant-quickview 
+				ng-repeat="restaurant in $ctrl.restaurants.filter($ctrl.selectedFilters.filterRestaurants)"
+				restaurant="restaurant"
+				on-click="$ctrl.handleOpenRestaurantPage(restaurant)"
+				user="$ctrl.user"
+			></restaurant-quickview>
+		</ul>
+	</div>
 </section>
