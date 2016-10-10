@@ -1,12 +1,13 @@
 class RestaurantPage {
-  constructor($stateParams, restaurantService, reviewService, $uibModal) {
+  constructor($stateParams, restaurantService, reviewService, $uibModal, $firebaseAuth) {
     this.$uibModal = $uibModal;
     this.restaurantService = restaurantService;
     this.reviewService = reviewService;
+    this.authHelper = $firebaseAuth();
 
     this.restaurant = null;
     this.reviews = null;
-    
+
     //
     //  SET AUTH LISTENER
     //
@@ -16,10 +17,11 @@ class RestaurantPage {
 
     this.restaurantService.getRestaurantById($stateParams.restaurantId).then(restaurant => {
       this.restaurant = restaurant;
+      this.restaurant.id = $stateParams.restaurantId;
+    });
 
-      this.reviewService.getReviewsByRestaurant(this.restaurant.id).then(reviews => {
-        this.reviews = reviews;
-      });
+    this.reviewService.getReviewsByRestaurant($stateParams.restaurantId).then(reviews => {
+      this.reviews = reviews;
     });
   }
 
@@ -27,8 +29,11 @@ class RestaurantPage {
     const modalInstance = this.$uibModal.open({
       component: 'restaurantReviewer',
       resolve: {
-        restaurant: function() {
+        restaurant: () => {
           return this.restaurant;
+        },
+        user: () => {
+          return this.user;
         }
       },
       animation: true
