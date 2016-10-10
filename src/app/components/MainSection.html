@@ -13,6 +13,7 @@
 			ng-repeat="restaurant in $ctrl.restaurants.filter($ctrl.selectedFilters.filterRestaurants)"
 			restaurant="restaurant"
 			on-click="$ctrl.handleOpenRestaurantPage(restaurant)"
+			user="$ctrl.user"
 		></restaurant-quickview>
 	</ul>
 </section>

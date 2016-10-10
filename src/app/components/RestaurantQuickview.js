@@ -1,15 +1,28 @@
 
 class RestaurantQuickview {
-  constructor($location) {
+  constructor($location, $uibModal) {
     this.$location = $location;
-  }
-  handleReviewWrite() {
-    this.openReviewModal(this.restaurant);
+    this.$uibModal = $uibModal;
   }
 
   handleOpenRestaurantPage(restaurantId) {
     console.log(restaurantId);
-    this.$location.path(`/restaurant/${restaurantId}`);
+    this.$location.url(`/restaurant/${restaurantId}`);
+  }
+
+  handleReviewWrite() {
+    const modalInstance = this.$uibModal.open({
+      component: 'restaurantReviewer',
+      resolve: {
+        restaurant: () => {
+          return this.restaurant;
+        },
+        user: () => {
+          return this.user;
+        }
+      },
+      animation: true
+    });
   }
 }
 
@@ -21,6 +34,7 @@ angular
     bindings: {
       restaurant: '<',
       openReviewModal: '&',
-      openRestaurantPage: '&'
+      openRestaurantPage: '&',
+      user: '<'
     }
   });

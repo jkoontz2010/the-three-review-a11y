@@ -1,14 +1,11 @@
 class MainSection {
-  constructor() {
-    console.log(this.selectedFilters.filterRestaurants);
-  }
+
   handleOpenRestaurantPage(restaurant) {
     this.openRestaurantPage(restaurant);
   }
 
   handleFilter(filter) {
     // expecting filter to only contain one key:value: {"location":"san francisco"}
-    console.log(filter);
     this.selectFilter({filter});
   }
 }
