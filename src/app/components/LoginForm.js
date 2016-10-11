@@ -1,7 +1,8 @@
 class LoginForm {
 
-  constructor(authService) {
+  constructor(authService, $uibModal) {
     this.authService = authService;
+    this.$uibModal = $uibModal;
     this.login = {};
     this.user = {};
     this.error = null;
@@ -18,6 +19,14 @@ class LoginForm {
       if (error.code === "auth/user-not-found" || 400) {
         this.error = "Email and/or password doesn't match our records.";
       }
+    });
+  }
+
+  openSignup() {
+    this.close();
+    const modalInstance = this.$uibModal.open({
+      component: 'signupForm',
+      animation: true
     });
   }
 }
