@@ -1,6 +1,6 @@
 <div class="col-sm-4">
 	<h2><a href="" ng-click="$ctrl.handleOpenRestaurantPage($ctrl.restaurant.id)">{{$ctrl.restaurant.name}}</a></h2>
-	<span uib-rating ng-model="$ctrl.restaurant.avgStars"></span>
+	<span uib-rating ng-model="$ctrl.restaurant.avgStars" read-only="true"></span>
 	<!-- <star-review stars="$ctrl.restaurant.avgStars"></star-review> -->
 	<p>{{$ctrl.restaurant.operatingHours}} 
 	<br>
