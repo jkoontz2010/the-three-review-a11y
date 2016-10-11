@@ -1,7 +1,9 @@
 class RestaurantFilter {
+  constructor() {
+    this.filter = selectedFilters;
+  }
 
   handleChange(filter) {
-    console.log(filter);
     this.selectFilter({filter});
   }
 }

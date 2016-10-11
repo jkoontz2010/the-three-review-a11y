@@ -25,7 +25,6 @@ class MainPage {
   }
 
   selectFilter(filter) {
-    console.log(filter);
     if (filter !== undefined) {
       Object.keys(filter).forEach(key => {
         selectedFilters[key] = filter[key];
