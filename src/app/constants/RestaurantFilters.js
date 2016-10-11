@@ -2,6 +2,7 @@ const selectedFilters = {
   location: "Austin",
   cuisine: "tacos",
   cost: "any",
+  sort: "-avgStars",
   filterRestaurants
 };
 

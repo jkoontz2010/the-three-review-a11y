@@ -3,14 +3,15 @@
 	<h2 class="text-center">And only three different cuisines!</h2>
 	<!-- plate of food underneath the above text -->
 	<restaurant-filter selected-filters="$ctrl.selectedFilters"
-						select-filter="$ctrl.handleFilter(filter)">
+						select-filter="$ctrl.handleFilter(filter)"
+						select-sort="$ctrl.handleSort(sort)">
 	</restaurant-filter>
 
 	<div class="row">
 		<ul class="restaurant-list col-sm-10 col-sm-offset-1">
 
 			<restaurant-quickview 
-				ng-repeat="restaurant in $ctrl.restaurants.filter($ctrl.selectedFilters.filterRestaurants)"
+				ng-repeat="restaurant in $ctrl.restaurants.filter($ctrl.selectedFilters.filterRestaurants) | orderBy: $ctrl.selectedFilters.sort"
 				restaurant="restaurant"
 				on-click="$ctrl.handleOpenRestaurantPage(restaurant)"
 				user="$ctrl.user"

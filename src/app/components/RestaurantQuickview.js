@@ -6,23 +6,45 @@ class RestaurantQuickview {
   }
 
   handleOpenRestaurantPage(restaurantId) {
-    console.log(restaurantId);
     this.$location.url(`/restaurant/${restaurantId}`);
   }
 
   handleReviewWrite() {
-    const modalInstance = this.$uibModal.open({
-      component: 'restaurantReviewer',
-      resolve: {
-        restaurant: () => {
-          return this.restaurant;
-        },
-        user: () => {
-          return this.user;
+    if (this.user === null || this.user === undefined) {
+      const loginInstance = this.$uibModal.open({
+        component: 'loginForm',
+        animation: true,
+        resolve: {
+          message: () => {
+            return "Please log in to write a review!";
+          }
         }
-      },
-      animation: true
-    });
+      });
+
+      loginInstance.result.then(user => {
+        this.user = user;
+        if (this.user) {
+          this.handleReviewWrite();
+        }
+      });
+    } else {
+      const modalInstance = this.$uibModal.open({
+        component: 'restaurantReviewer',
+        resolve: {
+          restaurant: () => {
+            return this.restaurant;
+          },
+          user: () => {
+            return this.user;
+          }
+        },
+        animation: true
+      });
+
+      modalInstance.result.then(reviews => {
+        this.reviews = reviews;
+      });
+    }
   }
 }
 

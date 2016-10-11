@@ -6,6 +6,10 @@ class RestaurantFilter {
   handleChange(filter) {
     this.selectFilter({filter});
   }
+
+  handleSort(sort) {
+    this.selectSort({sort});
+  }
 }
 
 angular
@@ -15,6 +19,7 @@ angular
     controller: RestaurantFilter,
     bindings: {
       selectedFilters: '<',
-      selectFilter: '&'
+      selectFilter: '&',
+      selectSort: '&'
     }
   });

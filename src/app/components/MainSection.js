@@ -8,6 +8,11 @@ class MainSection {
     // expecting filter to only contain one key:value: {"location":"san francisco"}
     this.selectFilter({filter});
   }
+
+  handleSort(sort) {
+    // expecting filter to only contain one key:value: {"location":"san francisco"}
+    this.selectSort({sort});
+  }
 }
 
 angular
@@ -21,6 +26,7 @@ angular
       openRestaurantPage: '&',
       selectedFilters: '<',
       selectFilter: '&',
+      selectSort: '&',
       user: '<'
     }
   });

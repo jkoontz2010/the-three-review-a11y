@@ -23,10 +23,16 @@
 		</div>
 		<div class="col-sm-4">
 			<!-- radio buttons for best reveiwed and most reviewed -->
-			<input type="radio" id="bestReviewed" ng-model="$ctrl.filter.bestmost" value="best">
+			<input type="radio" id="bestReviewed" 
+					ng-model="$ctrl.filter.sort"
+					ng-change="$ctrl.handleSort({sort: $ctrl.filter.sort})"
+					value="-avgStars">
 			<label for="bestReviewed">Best Reviewed</label>
 			<br>
-			<input type="radio" id="mostReviews" ng-model="$ctrl.filter.bestmost" value="most">
+			<input type="radio" id="mostReviews" 
+					ng-model="$ctrl.filter.sort" 
+					ng-change="$ctrl.handleSort({sort: $ctrl.filter.sort})"
+					value="-reviewCount">
 			<label for="mostReviews">Most Reviews</label>
 			<br>
 			<div class="btn-group" role="group" aria-label="...">

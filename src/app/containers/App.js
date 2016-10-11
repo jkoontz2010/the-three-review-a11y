@@ -32,6 +32,13 @@ class MainPage {
     }
   }
 
+  selectSort(sort) {
+    if (sort !== undefined) {
+      console.log(sort.sort);
+      selectedFilters.sort = sort.sort;
+    }
+  }
+
 }
 
 angular
