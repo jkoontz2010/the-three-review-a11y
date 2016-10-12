@@ -16,7 +16,7 @@
 
   <div class="form-group" ng-class="{ 'has-error' : $ctrl.signup.password.$invalid && $ctrl.signup.password.$touched }">
     <label for="password">Password</label>
-    <input type="password" id="password" class="form-control" name="password" ng-model="$ctrl.user.password" placeholder="ex. Val1dPASS" required ng-pattern="$ctrl.pwdPattern" />
+    <input type="password" id="password" class="form-control" name="password" ng-model="$ctrl.user.password" placeholder="ex. Val1dPASS" required ng-pattern="$ctrl.pwdPattern" title="Passwords are required to have at least 6 characters, a number, and a lower and uppercase letter."/>
 
     <p ng-show="$ctrl.signup.password.$invalid && $ctrl.signup.password.$dirty" class="help-block">Passwords are required to have at least 6 characters, a number, and a lower and uppercase letter!</p>
   </div>

@@ -23,12 +23,13 @@ class ReviewService {
 
   getReviewsByRestaurant(restaurantId) {
     return this.reviewsRef.$loaded().then(data => {
-      const review = this.reviewsRef[restaurantId];
-
-      if (review === undefined) {
+      const reviewsObject = this.reviewsRef[restaurantId];
+      if (reviewsObject === undefined) {
         return new Error();
       }
-      return review;
+
+      const reviews = Object.keys(reviewsObject).map(key => reviewsObject[key]);
+      return reviews;
     }).catch(error => {
       return new Error(error);
     });

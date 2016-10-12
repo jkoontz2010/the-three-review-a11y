@@ -7,7 +7,7 @@
 <button class="btn btn-default" ng-click="$ctrl.handleReviewWrite()">Write a Review!</button> 
 <ul class="restaurant-reviews">
 	<restaurant-review 
-		ng-repeat="review in $ctrl.reviews"
+		ng-repeat="review in $ctrl.reviews | orderBy:'-'"
 		review="review"
 	></restaurant-review>
 </ul>
