@@ -1,0 +1,4 @@
+-FountainJS Yeoman generator for Angular 1.5 w/ Gulp, SASS, Bower
+-AngularFire used to handle Firebase db. Docs used to inform implementation (https://github.com/firebase/angularfire)
+-UI Bootstrap used for some components
+-ngAria handles a few a11y elements
