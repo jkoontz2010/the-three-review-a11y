@@ -1,4 +1,4 @@
-<div class="col-sm-4">
+<article class="col-sm-4">
 	<h2><a href="" ng-click="$ctrl.handleOpenRestaurantPage($ctrl.restaurant.id)">{{$ctrl.restaurant.name}}</a></h2>
 	<span uib-rating ng-model="$ctrl.restaurant.avgStars" read-only="true"></span>
 	<!-- <star-review stars="$ctrl.restaurant.avgStars"></star-review> -->
@@ -8,5 +8,5 @@
 	<img ng-src="{{$ctrl.restaurant.img_url}}" alt="{{$ctrl.restaurant.alt_text}}">
 	<p>{{$ctrl.restaurant.location.join("\n")}}</p>
 	<button class="btn btn-default" ng-click="$ctrl.handleReviewWrite()">Write a review!</button>
-</div>
+</article>
 
