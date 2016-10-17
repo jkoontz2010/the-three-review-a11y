@@ -1,5 +1,4 @@
 class MainSection {
-
   handleOpenRestaurantPage(restaurant) {
     this.openRestaurantPage(restaurant);
   }

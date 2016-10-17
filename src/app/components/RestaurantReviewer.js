@@ -2,6 +2,8 @@ class RestaurantReviewer {
   constructor(reviewService) {
     this.reviewService = reviewService;
     this.restaurant = null;
+    this.review = {};
+    this.review.stars = 0;
 
     this.$onInit = function () {
       this.restaurant = this.resolve.restaurant;
