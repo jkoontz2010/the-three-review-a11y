@@ -2,3 +2,7 @@
 -AngularFire used to handle Firebase db. Docs used to inform implementation (https://github.com/firebase/angularfire)
 -UI Bootstrap used for some components
 -ngAria handles a few a11y elements
+
+StackOverflow for:
+-repeating an element n with ng-repeat times: http://stackoverflow.com/questions/14198017/iteration-ng-repeat-only-x-times-in-angularjs
+-watching for changes in component binding values: http://stackoverflow.com/questions/35681102/how-to-watch-component-binding-change-using-angular-component

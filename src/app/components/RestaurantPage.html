@@ -1,6 +1,6 @@
 <h2>{{$ctrl.restaurant.name}}</h2>
 <h3>{{$ctrl.restaurant.operatingHours}}</h3>
-<span uib-rating ng-model="$ctrl.restaurant.avgStars" read-only="true"></span>
+<read-only-star-review stars="$ctrl.restaurant.avgStars"></read-only-star-review>
 <h3>{{$ctrl.restaurant.location.join(" ")}}</h3>
 <img ng-src="{{$ctrl.restaurant.img_url}}" alt="{{$ctrl.restaurant.alt_text}}">
 <br>
