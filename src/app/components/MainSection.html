@@ -1,11 +1,16 @@
 <main>
-<div class="row">
-	<div class="col-sm-offset-2 col-sm-8">
-		<h1 class="text-center food-plate">Restaurant Reviews for Three Different Cities <br>
-		And only three different cuisines!</h1><br>
+	<div class="header">
+		<div class="row">
+			<div class="col-sm-offset-2 col-sm-8">
+				<h1 class="text-center">Three Cities. Three Cuisines.<br>
+				Restaurant Reviews.</h1>
+				<br>
+				<img class="img-responsive center-block plate" src="plate.svg" alt="plate of food" width="150px" height="150px">
+
+			</div>
+
+		</div>
 	</div>
-</div>
-	
 	<!-- plate of food underneath the above text -->
 	<restaurant-filter selected-filters="$ctrl.selectedFilters"
 						select-filter="$ctrl.handleFilter(filter)"

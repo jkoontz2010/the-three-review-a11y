@@ -1,5 +1,29 @@
+/*$brand-primary: #00A0B8;*/
+$brand-primary: #273b7a;
+$font-primary: #fff;
+
+$navbar-default-bg: $brand-primary;
+$navbar-default-link-color: $font-primary;
+$navbar-margin-bottom: 0px;
+$navbar-border-radius: 0px;
+$navbar-default-toggle-icon-bar-bg: $font-primary;
+$navbar-default-toggle-hover-bg: darken($brand-primary, 10%);
+
+/* Using SCSS variables to store breakpoints */
+$breakpoint-tablet: 950px;
+
+
+
+
 @import "bootstrap";
 
+.header {
+	background-color: $brand-primary;
+	color: $font-primary;
+	line-height: 1.5em;
+	padding-bottom:40px;
+	margin-bottom: 90px;
+}
 /*
 .food-plate {
 	z-index:2;
@@ -15,13 +39,15 @@
     height: 113px;
     z-index: 1;
     opacity: 0.6;
-    background: url(plateoffood.svg) no-repeat center -10px;
+    background: url(plate.svg) no-repeat center -10px;
 
-} */
+} 
+*/
 
-.navbar-default .navbar-brand {
-    color: #555;
+.navbar {
+	border: 0px;
 }
-.navbar-default .navbar-nav > li > a {
-    color: #555;
+
+.plate {
+	margin-bottom: -115px;
 }
