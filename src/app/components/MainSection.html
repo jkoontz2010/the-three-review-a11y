@@ -1,36 +1,35 @@
 
 	<main>
 		<div class="container-fluid">
-		<div class="header row">
-			<div class="col-sm-offset-2 col-sm-8">
-				<h1 class="text-center">Three Cities. Three Cuisines.<br>
-				Restaurant Reviews.</h1>
-				<br>
-				<img class="img-responsive center-block plate" src="plate.svg" alt="plate of food" width="175px" height="175px">
+			<div class="header row">
+				<div class="col-sm-offset-2 col-sm-8">
+					<h1 class="text-center">Three Cities. Three Cuisines.<br>
+					Restaurant Reviews.</h1>
+					<br>
+					<img class="img-responsive center-block plate" src="plate.svg" alt="plate of food" width="175px" height="175px">
 
+				</div>
 			</div>
-		</div>
 		</div>
 
 		<div class="container">
 		<!-- plate of food underneath the above text -->
-		<div class="row">
-		<restaurant-filter selected-filters="$ctrl.selectedFilters"
-							select-filter="$ctrl.handleFilter(filter)"
-							select-sort="$ctrl.handleSort(sort)">
-		</restaurant-filter>
+				<restaurant-filter selected-filters="$ctrl.selectedFilters"
+									select-filter="$ctrl.handleFilter(filter)"
+									select-sort="$ctrl.handleSort(sort)">
+				</restaurant-filter>
 		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<ul class="restaurant-list col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
-		<div class="row">
-			<ul class="restaurant-list col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-
-				<restaurant-quickview 
-					ng-repeat="restaurant in $ctrl.restaurants.filter($ctrl.selectedFilters.filterRestaurants) | orderBy: $ctrl.selectedFilters.sort"
-					restaurant="restaurant"
-					on-click="$ctrl.handleOpenRestaurantPage(restaurant)"
-					user="$ctrl.user"
-				></restaurant-quickview>
-			</ul>
-		</div>
+					<restaurant-quickview 
+						ng-repeat="restaurant in $ctrl.restaurants.filter($ctrl.selectedFilters.filterRestaurants) | orderBy: $ctrl.selectedFilters.sort"
+						restaurant="restaurant"
+						on-click="$ctrl.handleOpenRestaurantPage(restaurant)"
+						user="$ctrl.user"
+					></restaurant-quickview>
+				</ul>
+			</div>
 		</div>
 	</main>

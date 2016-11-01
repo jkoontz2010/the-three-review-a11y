@@ -18,7 +18,6 @@ class RestaurantPage {
     this.restaurantService.getRestaurantById($stateParams.restaurantId).then(restaurant => {
       this.restaurant = restaurant;
       this.restaurant.id = $stateParams.restaurantId;
-      this.restaurant.location = restaurant.location.join('\n');
     });
 
     this.reviewService.getReviewsByRestaurant($stateParams.restaurantId).then(reviews => {

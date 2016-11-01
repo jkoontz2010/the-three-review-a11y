@@ -7,11 +7,11 @@
 			<h4>Open: {{$ctrl.restaurant.operatingHours}}</h4>
 			
 			<div map-lazy-load="https://maps.google.com/maps/api/js?key=AIzaSyCfunUKqE-js0bjK0xiINRUOmcWl_3PBtg">
-			  <ng-map center="{{$ctrl.restaurant.location}}" zoom="15">
-			  	<marker position="{{$ctrl.restaurant.location}}"></marker>
+			  <ng-map center="{{$ctrl.restaurant.location.join(' ')}}" zoom="15">
+			  	<marker position="{{$ctrl.restaurant.location.join(' ')}}"></marker>
 			  </ng-map>
 			</div>
-			<h4>{{$ctrl.restaurant.location}}</h4>
+			<h4>{{$ctrl.restaurant.location.join(" ")}}</h4>
 			
 
 		</div>

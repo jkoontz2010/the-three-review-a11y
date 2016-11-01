@@ -3,6 +3,7 @@ class Navbar {
     this.$uibModal = $uibModal;
     this.authHelper = $firebaseAuth();
     this.user = null;
+    this.isNavCollapsed = false;
 
     //
     //  SET AUTH LISTENER
