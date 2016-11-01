@@ -6,6 +6,8 @@ $font-primary: #fff;
 
 $navbar-default-bg: $brand-primary;
 $navbar-default-link-color: $font-primary;
+$navbar-default-link-hover-color: darken($font-primary, 35%);
+$link-hover-color: darken($font-primary, 5%);
 $navbar-margin-bottom: 0px;
 $navbar-border-radius: 0px;
 $navbar-default-toggle-icon-bar-bg: $font-primary;
@@ -57,4 +59,46 @@ $font-family-base:        $font-family-sans-serif;
 
 .plate {
 	margin-bottom: -115px;
+}
+
+.quickview {
+	box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	margin-top: 35px;
+	margin-bottom: 25px;
+	margin-right: 25px;
+
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+
+	@media (max-width: $screen-sm-min) {
+		margin-bottom: 0px;
+	}
+
+
+	.inner {
+		margin-top: -10px;
+		padding: 5px 15px 18px 15px;
+	}
+	img {
+		width: 100%;
+		border-top-right-radius: 5px;
+		border-top-left-radius: 5px;
+
+	}
+}
+
+.filter-bars {
+	
+	.row {
+		margin-bottom: 15px;
+	}
+	h2 {
+
+		display: inline;
+		vertical-align: middle;
+	}
+}
+
+.restaurant-reviews {
+	margin-top:50px;
 }

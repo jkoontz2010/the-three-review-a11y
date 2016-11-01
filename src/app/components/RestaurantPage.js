@@ -18,6 +18,7 @@ class RestaurantPage {
     this.restaurantService.getRestaurantById($stateParams.restaurantId).then(restaurant => {
       this.restaurant = restaurant;
       this.restaurant.id = $stateParams.restaurantId;
+      this.restaurant.location = restaurant.location.join('\n');
     });
 
     this.reviewService.getReviewsByRestaurant($stateParams.restaurantId).then(reviews => {
@@ -26,7 +27,6 @@ class RestaurantPage {
   }
 
   handleReviewWrite() {
-    console.log(this.user);
     if (this.user === null) {
       const loginInstance = this.$uibModal.open({
         component: 'loginForm',
