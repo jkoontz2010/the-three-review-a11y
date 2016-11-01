@@ -44,6 +44,7 @@ class RestaurantPage {
     } else {
       const modalInstance = this.$uibModal.open({
         component: 'restaurantReviewer',
+        size: 'sm',
         resolve: {
           restaurant: () => {
             return this.restaurant;
