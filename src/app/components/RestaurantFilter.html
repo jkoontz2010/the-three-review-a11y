@@ -1,43 +1,41 @@
 <div class="row">
-	<div class="col-sm-offset-3 col-sm-8">
+	<div class="col-sm-offset-4 col-sm-8 filter-bars">
 	<form>
-		<div class="col-sm-3">
+		<div class="row">
 			<!-- radio buttons for location -->
 
 			<fieldset>
-				<legend>Which city?</legend>
-				<input type="radio" name="atx" id="atx" 
-						ng-model="$ctrl.filter.location" 
-						ng-change="$ctrl.handleChange({location: $ctrl.filter.location})" 
-						value="Austin">
-						<label for="atx">Austin</label>	
-						<br>
-				<input type="radio" name="sf" id="sf" 
-						ng-model="$ctrl.filter.location" 
-						ng-change="$ctrl.handleChange({location: $ctrl.filter.location})"
-						value="San Francisco">
-						<label for="sf">San Francisco</label>
-						<br>
-				<input type="radio" name="ny" id="ny" 
-						ng-model="$ctrl.filter.location" 
-						ng-change="$ctrl.handleChange({location: $ctrl.filter.location})"
-						value="NY">
-						<label for="ny">New York</label>
-						<br>
+				<span class="col-sm-1"> 
+					<h2 class="text-right">City?</h2>
+				</span>
+				<div class="btn-group col-sm-7 col-sm-offset-1" role="group" aria-label="city">
+				    <button type="button" 
+				  		    ng-model="$ctrl.filter.location"
+				  		    uib-btn-radio="'Austin'"
+				  		    ng-click="$ctrl.handleChange({location: $ctrl.filter.location})" 
+				  		    class="btn btn-default">Austin</button>
+				    <button type="button" 
+				  		    ng-model="$ctrl.filter.location"
+				  		    uib-btn-radio="'NY'"
+				  		    ng-click="$ctrl.handleChange({location: $ctrl.filter.location})"
+				  		    class="btn btn-default">New York</button>
+				    <button type="button" 
+				  		    ng-model="$ctrl.filter.location"
+				  		    uib-btn-radio="'San Francisco'"
+				  		    ng-click="$ctrl.handleChange({location: $ctrl.filter.location})"
+				  		    class="btn btn-default">San Francisco</button>
+				</div>
 			</fieldset>
 		</div>
-		<div class="col-sm-4">
+		<div class="row">
 			<!-- radio buttons for best reveiwed and most reviewed -->
 			<fieldset>
-				<legend>Sort by:</legend>
-				<input type="checkbox" id="bestReviewed" 
-						ng-model="$ctrl.filter.sort"
-						ng-true-value="'-avgStars'"
-						ng-false-value="''"
-						ng-change="$ctrl.handleSort({sort: $ctrl.filter.sort})">
-				<label for="bestReviewed">Best Reviewed</label>
-				<br>
-				<div class="btn-group" role="group" aria-label="...">
+				<span class="col-sm-1"> 
+					<h2 class="text-right">Cost?</h2>
+				</span>
+				
+				
+				<div class="btn-group col-sm-7 col-sm-offset-1" role="group" aria-label="cost">
 				    <button type="button" 
 				    		ng-model="radioCost" 
 				    		uib-btn-radio="'$'" 
@@ -62,29 +60,41 @@
 			</fieldset>
 		</div>
 
-		<div class="col-sm-4">
+		<div class="row">
 			<!-- $$$ filter and cuisine combobox -->
 			<fieldset>
-				<legend>Cuisine:</legend>
-				<input type="radio" id="chinese" 
-						ng-model="$ctrl.filter.cuisine" 
-						ng-change="$ctrl.handleChange({cuisine: $ctrl.filter.cuisine})" 
-						value="Chinese" checked>
-						<label for="chinese">Chinese</label>	
-						<br>
-				<input type="radio" id="bbq" 
-						ng-model="$ctrl.filter.cuisine" 
-						ng-change="$ctrl.handleChange({cuisine: $ctrl.filter.cuisine})"
-						value="BBQ">
-						<label for="bbq">BBQ</label>
-						<br>
-				<input type="radio" id="tacos" 
-						ng-model="$ctrl.filter.cuisine" 
-						ng-change="$ctrl.handleChange({cuisine: $ctrl.filter.cuisine})"
-						value="tacos">
-						<label for="tacos">Tacos</label>
-						<br>
+				<span class="col-sm-1"> 
+					<h2 class="text-right">Cuisine?</h2>
+				</span>
+				<span class="btn-group col-sm-7 col-sm-offset-1" role="group" aria-label="city">
+				    <button type="button" 
+				  		    ng-model="$ctrl.filter.cuisine"
+				  		    uib-btn-radio="'tacos'"
+				  		    ng-click="$ctrl.handleChange({cuisine: $ctrl.filter.cuisine})" 
+				  		    class="btn btn-default">Tacos</button>
+				    <button type="button" 
+				  		    ng-model="$ctrl.filter.cuisine"
+				  		    uib-btn-radio="'BBQ'"
+				  		    ng-click="$ctrl.handleChange({cuisine: $ctrl.filter.cuisine})"
+				  		    class="btn btn-default">BBQ</button>
+				    <button type="button" 
+				  		    ng-model="$ctrl.filter.cuisine"
+				  		    uib-btn-radio="'Chinese'"
+				  		    ng-click="$ctrl.handleChange({cuisine: $ctrl.filter.cuisine})"
+				  		    class="btn btn-default">Chinese</button>
+				</span>
 			</fieldset>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-2">
+				<input type="checkbox" id="bestReviewed" 
+						ng-model="$ctrl.filter.sort"
+						ng-true-value="'-avgStars'"
+						ng-false-value="''"
+						ng-change="$ctrl.handleSort({sort: $ctrl.filter.sort})">
+				<label for="bestReviewed">Best Reviewed</label>
+			</div>
+			
 		</div>
 		</form>
 	</div>

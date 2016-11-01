@@ -1,24 +1,28 @@
+<div class="container">
+  <div class="row">
+	
+  <div class="col-sm-5">
+  <h1>{{$ctrl.message}}</h1><br>
+	<form name="$ctrl.login" ng-submit="$ctrl.loginUser($ctrl.user)" autocomplete="on" novalidate>
+	  <p ng-show="$ctrl.error" class="text-danger" ng-bind="$ctrl.error"></p>
+	  <div class="form-group" ng-class="{ 'has-error' : $ctrl.login.email.$invalid && $ctrl.login.email.$touched }">
+		<label for="email">Email</label>
+		<input type="email" id="email" class="form-control" ng-model="$ctrl.user.email" placeholder="ex. you@mail.com" required />
+		<p ng-show="$ctrl.login.email.$invalid && $ctrl.login.email.$touched" class="help-block">Email is required!</p>
+	  </div>
 
-<h1>{{$ctrl.message}}</h1><br>
+	  <div class="form-group" ng-class="{ 'has-error' : $ctrl.login.password.$invalid && $ctrl.login.password.$touched }">
+		<label for="password">Password</label>
+		<input type="password" id="password" class="form-control" ng-model="$ctrl.user.password" required />
 
-<form name="$ctrl.login" ng-submit="$ctrl.loginUser($ctrl.user)" autocomplete="on" novalidate>
-  <p ng-show="$ctrl.error" class="text-danger" ng-bind="$ctrl.error"></p>
-  <div class="form-group" ng-class="{ 'has-error' : $ctrl.login.email.$invalid && $ctrl.login.email.$touched }">
-    <label for="email">Email</label>
-    <input type="email" id="email" class="form-control" ng-model="$ctrl.user.email" placeholder="ex. you@mail.com" required />
-    <p ng-show="$ctrl.login.email.$invalid && $ctrl.login.email.$touched" class="help-block">Email is required!</p>
+		<p ng-show="$ctrl.login.password.$invalid && $ctrl.login.password.$touched" class="help-block">Password required!</p>
+	  </div>
+
+	  <div class="form-group">
+		<button type="submit" ng-disabled="$ctrl.login.$invalid" class="btn btn-info clearfix">Submit</button>
+
+		<br><br><a href="" ng-click="$ctrl.openSignup()">Not a registered user? Click here to sign up!</a>
+	  </div>
+	</form>
   </div>
-
-  <div class="form-group" ng-class="{ 'has-error' : $ctrl.login.password.$invalid && $ctrl.login.password.$touched }">
-    <label for="password">Password</label>
-    <input type="password" id="password" class="form-control" ng-model="$ctrl.user.password" required />
-
-    <p ng-show="$ctrl.login.password.$invalid && $ctrl.login.password.$touched" class="help-block">Password required!</p>
-  </div>
-
-  <div class="form-group">
-    <button type="submit" ng-disabled="$ctrl.login.$invalid" class="btn btn-info clearfix">Submit</button>
-
-    <br><a href="" ng-click="$ctrl.openSignup()">Not a registered user? Click here to sign up!</a>
-  </div>
-</form>
+</div>

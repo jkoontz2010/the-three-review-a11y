@@ -1,27 +1,33 @@
+<div class="container">
+    <div class="row">
 
-<h1>Register</h1><br>
+        <div class="col-sm-5">
+            <h1>Register</h1><br>
 
-<form name="$ctrl.signup" ng-submit="$ctrl.register($ctrl.user)" autocomplete="on" novalidate>
-<p ng-show="$ctrl.error" class="text-danger" ng-bind="$ctrl.error"></p>
-  <div class="form-group" ng-class="{ 'has-error' : $ctrl.signup.name.$invalid && $ctrl.signup.name.$touched }">
-    <label for="name">Name</label>
-    <input type="name" class="form-control" id="name" name="name" ng-model="$ctrl.user.name" placeholder="ex. James Franco" focus-if required />
-    <p ng-show="$ctrl.signup.name.$invalid && $ctrl.signup.name.$touched" class="help-block">We must have your name!</p>
-  </div>
-  <div class="form-group" ng-class="{ 'has-error' : $ctrl.signup.email.$invalid && $ctrl.signup.email.$touched }">
-    <label for="email">Email</label>
-    <input type="email" id="email" class="form-control" name="email" ng-model="$ctrl.user.email" placeholder="ex. you@mail.com" required />
-    <p ng-show="$ctrl.signup.email.$invalid && $ctrl.signup.email.$touched" class="help-block">A correct email is required!</p>
-  </div>
+            <form name="$ctrl.signup" ng-submit="$ctrl.register($ctrl.user)" autocomplete="on" novalidate>
+            <p ng-show="$ctrl.error" class="text-danger" ng-bind="$ctrl.error"></p>
+              <div class="form-group" ng-class="{ 'has-error' : $ctrl.signup.name.$invalid && $ctrl.signup.name.$touched }">
+                <label for="name">Name</label>
+                <input type="name" class="form-control" id="name" name="name" ng-model="$ctrl.user.name" placeholder="ex. James Franco" focus-if required />
+                <p ng-show="$ctrl.signup.name.$invalid && $ctrl.signup.name.$touched" class="help-block">We must have your name!</p>
+              </div>
+              <div class="form-group" ng-class="{ 'has-error' : $ctrl.signup.email.$invalid && $ctrl.signup.email.$touched }">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" name="email" ng-model="$ctrl.user.email" placeholder="ex. you@mail.com" required />
+                <p ng-show="$ctrl.signup.email.$invalid && $ctrl.signup.email.$touched" class="help-block">A correct email is required!</p>
+              </div>
 
-  <div class="form-group" ng-class="{ 'has-error' : $ctrl.signup.password.$invalid && $ctrl.signup.password.$touched }">
-    <label for="password">Password</label>
-    <input type="password" id="password" class="form-control" name="password" ng-model="$ctrl.user.password" placeholder="ex. Val1dPASS" required ng-pattern="$ctrl.pwdPattern" title="Passwords are required to have at least 6 characters, a number, and a lower and uppercase letter."/>
+              <div class="form-group" ng-class="{ 'has-error' : $ctrl.signup.password.$invalid && $ctrl.signup.password.$touched }">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" name="password" ng-model="$ctrl.user.password" placeholder="ex. Val1dPASS" required ng-pattern="$ctrl.pwdPattern" title="Passwords are required to have at least 6 characters, a number, and a lower and uppercase letter."/>
 
-    <p ng-show="$ctrl.signup.password.$invalid && $ctrl.signup.password.$dirty" class="help-block">Passwords are required to have at least 6 characters, a number, and a lower and uppercase letter!</p>
-  </div>
+                <p ng-show="$ctrl.signup.password.$invalid && $ctrl.signup.password.$dirty" class="help-block">Passwords are required to have at least 6 characters, a number, and a lower and uppercase letter!</p>
+              </div>
 
-  <div class="form-group">
-    <button type="submit" ng-disabled="$ctrl.signup.$invalid" class="btn btn-info clearfix">Submit</button>
-  </div>
-</form>
+              <div class="form-group">
+                <button type="submit" ng-disabled="$ctrl.signup.$invalid" class="btn btn-info clearfix">Submit</button>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>
