@@ -10,6 +10,10 @@ Screen-reader & AAA color-blindness accessible restaurant review app
 ## View the App
 Visit https://thethreereview.firebaseapp.com/
 
+## Test with Screen Reader
+CMD + F5 on Mac for VoiceOver utility
+[ChromeVox](http://www.chromevox.com/) For Chrome extension screen reader
+
 ## Run Locally
 
 Clone from GitHub:
