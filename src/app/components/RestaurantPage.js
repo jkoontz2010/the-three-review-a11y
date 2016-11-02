@@ -6,7 +6,7 @@ class RestaurantPage {
     this.authHelper = $firebaseAuth();
 
     this.restaurant = null;
-    this.reviews = [];
+    this.reviews = null;
 
     //
     //  SET AUTH LISTENER

@@ -19,13 +19,18 @@
 			<br><br><br>
 			<button class="btn btn-default" ng-click="$ctrl.handleReviewWrite()">Write a Review!</button> 
 			<br><br><br>
-			<h2>Reviews:</h2>
-			<ul class="restaurant-reviews">
-				<restaurant-review 
-					ng-repeat="review in $ctrl.reviews | orderBy:'-'"
-					review="review"
-				></restaurant-review>
-			</ul>
+			<span ng-if="$ctrl.reviews.length > 0">
+				<h2>Reviews:</h2>
+				<ul class="restaurant-reviews">
+					<restaurant-review 
+						ng-repeat="review in $ctrl.reviews | orderBy:'-'"
+						review="review"
+					></restaurant-review>
+				</ul>
+			</span>
+			<span ng-show="!$ctrl.reviews.length">
+				<h2>No user-submitted reviews as of yet!</h2>
+			</span>
 		</div>
 	</div>
 </div>
