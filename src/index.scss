@@ -33,25 +33,6 @@ $font-family-base:        $font-family-sans-serif;
 	padding-bottom:40px;
 	margin-bottom: 90px;
 }
-/*
-.food-plate {
-	z-index:2;
-  	background-size: 200px auto;
-}
-
-.food-plate:before {
-    content: ' ';
-    display: block;
-    position:absolute;
-    left:500px;
-    width: 100px;
-    height: 113px;
-    z-index: 1;
-    opacity: 0.6;
-    background: url(plate.svg) no-repeat center -10px;
-
-} 
-*/
 
 .navbar {
 	border: 0px;
@@ -62,6 +43,7 @@ $font-family-base:        $font-family-sans-serif;
 }
 
 .quickview {
+
 	box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	margin-top: 35px;
 	margin-bottom: 25px;
@@ -106,4 +88,8 @@ $font-family-base:        $font-family-sans-serif;
 .glyphicon-star {
 	color: #FFD700;
     font-size: 16px;
+}
+
+.quickview-height {
+	height: 390px;
 }
