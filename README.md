@@ -2,8 +2,10 @@
 Screen-reader & AAA color-blindness accessible restaurant review app
 
 ## Stack
-* Angular JS 1.5 components
-* 
+* ES6 w/Babel
+* Angular JS 1.5 Components
+* [Firebase](https://firebase.google.com/)
+* SASS & [Bootstrap-SASS](https://github.com/twbs/bootstrap-sass)
 
 ## View the App
 Visit https://thethreereview.firebaseapp.com/
